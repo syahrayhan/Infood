@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  *:focus {
+    outline: none;
+  }
+  body {
+    @apply bg-black-primary
+  }
+
+  app-bar {
+    @apply sticky w-full mx-auto flex-none flex bg-black-primary shadow-2xl
+  }
+}
