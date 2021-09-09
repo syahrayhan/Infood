@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
+:root {
   /* Custom Colors */
-  --orange-primary: #FF5C00;
-  --orange-secondary: #FF8A00;
+  --orange-primary: #ff5c00;
+  --orange-secondary: #ff8a00;
   --orange-opacity: rgba(255, 92, 0, 0.8);
-  --orange-soft: #FFF4D7;
+  --orange-soft: #fff4d7;
 
-  --yellow-primary: #FFB800;
-  --yellow-opacity:  rgba(255, 184, 0, 0.7);
-  
+  --yellow-primary: #ffb800;
+  --yellow-opacity: rgba(255, 184, 0, 0.7);
+
   --white-primary: #ffff;
   --white-opacity: rgba(255, 255, 255, 0.8);
 
@@ -19,8 +19,15 @@
 
   --gray-opacity: rgba(0, 0, 0, 0.3);
 
-  --pink: #F46464;
+  --pink: #f46464;
 }
 
 @layer components {
+  body {
+    @apply bg-orange-soft;
+  }
+
+  header {
+    @apply bg-white-primary w-full h-auto shadow-white sticky top-0
+  }
 }

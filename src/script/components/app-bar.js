@@ -7,8 +7,8 @@ class AppBar extends HTMLElement {
 
   render () {
     this.innerHTML = /* html */`
-      <nav class='py-4 px-16'>
-        <div class='flex justify-between'>
+      <nav class='py-4 px-16 '>
+        <div class='flex justify-between items-center'>
           <div>
             <a href='#'>
               <img src='${logo}' alt='logo infood' width='90px'>
@@ -16,7 +16,12 @@ class AppBar extends HTMLElement {
           </div>
           <div>
             <ul>
-              <li><a href='' class=''>Tersimpan</a></li>
+              <li>
+                <a href='' class='flex flex-col text-orange-primary text-lg font-medium text-center'>
+                Tersimpan
+                <span class='bg-orange-primary rounded-full text-white-primary'>0</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
