@@ -2,15 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  *:focus {
-    outline: none;
-  }
-  body {
-    @apply bg-black-primary
-  }
+:root{
+  /* Custom Colors */
+  --orange-primary: #FF5C00;
+  --orange-secondary: #FF8A00;
+  --orange-opacity: rgba(255, 92, 0, 0.8);
+  --orange-soft: #FFF4D7;
 
-  app-bar {
-    @apply sticky w-full max-w-6xl flex justify-between md:justify-start bg-black-primary shadow-2xl
-  }
+  --yellow-primary: #FFB800;
+  --yellow-opacity:  rgba(255, 184, 0, 0.7);
+  
+  --white-primary: #ffff;
+  --white-opacity: rgba(255, 255, 255, 0.8);
+
+  --black-opacity: rgba(0, 0, 0, 0.8);
+
+  --gray-opacity: rgba(0, 0, 0, 0.3);
+
+  --pink: #F46464;
+}
+
+@layer components {
 }

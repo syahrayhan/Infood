@@ -18,23 +18,25 @@ module.exports = {
   darkMode: false,
   theme: {
     colors: {
-      white: '#ffffff',
-      gray: {
-        primary: '##8c8c91',
-      },
-      black: {
-        primary: '#050505',
-      },
-      red: {
-        primary: '#fb1514',
-        secondary: '#cf1811',
-        alternative: '#990000',
+      orange: {
+        primary: 'var(--orange-primary)',
+        secondary: 'var(--orange-secondary)',
+        alternative: 'var(--orange-opacity)',
+        soft: 'var(--orange-soft)',
       },
       yellow: {
-        primary: '#24a164',
+        primary: 'var(--yellow-primary)',
+        alternative: 'var(--yellow-opacity)',
       },
-      green: {
-        primary: '#26aa69',
+      black: {
+        alternative: 'var(--black-opacity)',
+      },
+      white: {
+        primary: 'var(--white-primary)',
+        alternative: 'var(--white-opacity)',
+      },
+      gray: {
+        alternative: 'var(--gray-opacity)',
       },
     },
   },
