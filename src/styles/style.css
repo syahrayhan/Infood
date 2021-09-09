@@ -11,6 +11,6 @@
   }
 
   app-bar {
-    @apply sticky w-full mx-auto flex-none flex bg-black-primary shadow-2xl
+    @apply sticky w-full max-w-6xl flex justify-between md:justify-start bg-black-primary shadow-2xl
   }
 }

@@ -24,19 +24,15 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "style-loader": "^3.2.1",
     "tailwindcss": "^2.2.9",
-    "twind": "^0.16.16",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.0",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {
-    "lit": "^2.0.0-rc.4"
-  }
+  "dependencies": {}
 }

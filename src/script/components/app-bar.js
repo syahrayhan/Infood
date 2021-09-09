@@ -1,11 +1,14 @@
+import logo from '../../assets/infood.png'
+
 class AppBar extends HTMLElement {
   connectedCallback () {
     this.render()
   }
 
   render () {
+    console.log(logo)
     this.innerHTML = /* html */ `
-    <h1 class="my-4 py-2 text-left pl-16 text-3xl text-white font-extrabold italic">24Up</h1>
+      <img src='${logo}'>
     `
   }
 }

@@ -37,11 +37,6 @@ module.exports = {
         primary: '#26aa69',
       },
     },
-    extend: {
-      backgroundImage: theme => ({
-        'hero-pattern': 'url("/src/img/hero.jpg")',
-      }),
-    },
   },
   variants: {
     extend: {},
