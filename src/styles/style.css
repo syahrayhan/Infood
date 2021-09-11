@@ -23,7 +23,7 @@
 
   --gray-opacity: rgba(0, 0, 0, 0.3);
 
-  --pink: #f46464;
+  --pink-close: #f46464;
 }
 
 .hero {
@@ -45,10 +45,14 @@
   top: -45px;
 }
 
+.hscroll::-webkit-scrollbar {
+  display: none;
+}
+
 @layer components {
 
   header {
-    @apply bg-white-primary w-full h-auto shadow-white sticky top-0 z-50;
+    @apply bg-white w-full h-auto shadow-white sticky top-0 z-20;
   }
 
   footer{

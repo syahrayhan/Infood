@@ -26,7 +26,7 @@ class AppBar extends HTMLElement {
               <li>
                 <a href='' class='flex flex-col text-orange-primary text-lg font-medium text-center'>
                 Tersimpan
-                <span class='bg-orange-primary rounded-full text-white-primary'>0</span>
+                <span class='bg-orange-primary rounded-full text-white'>0</span>
                 </a>
               </li>
             </ul>
