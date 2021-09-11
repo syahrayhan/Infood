@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,12 +26,34 @@
   --pink: #f46464;
 }
 
+.hero {
+  background-image: url("/src/assets/hero-bg.png");
+}
+
+.card-icon {
+  background: linear-gradient(
+    152.97deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(42px);
+  border-radius: 16px;
+}
+
+.negative {
+  top: -45px;
+}
+
 @layer components {
-  body {
-    @apply bg-orange-soft;
-  }
 
   header {
-    @apply bg-white-primary w-full h-auto shadow-white sticky top-0
+    @apply bg-white-primary w-full h-auto shadow-white sticky top-0 z-50;
+  }
+
+  footer{
+    @apply w-full h-auto px-16
   }
 }
+
+

@@ -1,3 +1,4 @@
+/* eslint-disable accessor-pairs */
 import logo from '../../assets/infood.png'
 
 class AppBar extends HTMLElement {
@@ -5,9 +6,15 @@ class AppBar extends HTMLElement {
     this.render()
   }
 
+  set cardCountRecipie (cardCountRecipie) {
+    this._cardCountRecipie = cardCountRecipie
+    this.render()
+  }
+
   render () {
+    console.log(logo)
     this.innerHTML = /* html */`
-      <nav class='py-4 px-16 '>
+      <nav class='py-4 px-8 sm:px-16 z-100'>
         <div class='flex justify-between items-center'>
           <div>
             <a href='#'>

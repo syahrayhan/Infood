@@ -1,8 +1,8 @@
-
+/* eslint-disable no-dupe-keys */
 module.exports = {
-  mode: 'jit',
+  // mode: 'jit',
   purge: {
-    // mode: 'all',
+    mode: 'all',
     content: [
       './src/**/**/*.js',
       './src/*.html',
@@ -51,6 +51,48 @@ module.exports = {
       white: '0px 13px 56px 2px rgba(255, 255, 255, 0.3)',
       none: 'none',
     },
+    fontFamily: {
+      pacifico: ['Pacifico', 'cursive'],
+      ubuntu: ['Ubuntu', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+    },
+    zIndex: {
+      0: 0,
+      10: 10,
+      20: 20,
+      30: 30,
+      40: 40,
+      50: 50,
+      25: 25,
+      50: 50,
+      75: 75,
+      100: 100,
+      auto: 'auto',
+    },
+    screens: {
+      xs: '360px',
+
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1190px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
+    extend: {
+      backgroundImage: theme => ({
+        'hero-pattern': "url('/src/assets/hero-bg.png')",
+      }),
+    },
+
   },
   variants: {
     extend: {},
