@@ -1,4 +1,5 @@
 import './item-card'
+import './not-found'
 
 class SlideOver extends HTMLElement {
   connectedCallback () {
@@ -31,13 +32,9 @@ class SlideOver extends HTMLElement {
               <div class="mt-6 relative flex-1 px-4 sm:px-6 overflow-y-scroll ">
                 <!-- Replace with your content -->
                 <div class="absolute inset-0 px-4 sm:px-6">
-                    <div class='grid place-content-center sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4'>
+                    <not-found></not-found>
+                    <div class='hidden place-content-center sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4'>
 
-                      <item-card></item-card>
-                      <item-card></item-card>
-                      <item-card></item-card>
-                      <item-card></item-card>
-                      <item-card></item-card>
                       <item-card></item-card>
     
                     </div>
