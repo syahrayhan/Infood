@@ -8,13 +8,13 @@ class SlideOver extends HTMLElement {
 
   render () {
     this.innerHTML = /* html */`
-    <div class="fixed inset-0 overflow-hidden z-10 hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <div id='panel-saved-item' class="fixed inset-0 overflow-hidden z-10 hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
         <div class="fixed inset-x-0 bottom-0 h-4/5 max-w-full flex">
           <div class="relative w-screen max-w-full">
             <div class="absolute top-0 right-0 pt-2 pr-2 flex sm:-ml-10 sm:pr-4">
-              <button type="button" class="rounded-full p-2 bg-orange-close text-white hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white">
+              <button id='close-panel-button' type="button" class="rounded-full p-2 bg-orange-close text-white hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white">
                 <span class="sr-only">Close panel</span>
                 <!-- Heroicon name: outline/x -->
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
