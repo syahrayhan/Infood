@@ -16,7 +16,7 @@ class ItemCard extends HTMLElement {
         <button class='absolute right-0 top-0 mt-2 mr-2 px-3 bg-yellow-400 bg-opacity-50 hover:bg-opacity-100 rounded-md text-white font-ubuntu'>Simpan</button>
       </div>
       <div class='bg-white p-4 mt-2 rounded-xl'>
-        <a href='#'>
+        <a href='../../detail.html'>
           <h4 class='font-ubuntu font-semibold text-black opacity-80 hover:text-orange-alternative transform ease-linear duration-100'>Resep Nugget Tempe Mozzarella, Camilan Baru untuk Keluarga di Rumah</h4>
         </a>
           <div class='mt-8 flex justify-between'>

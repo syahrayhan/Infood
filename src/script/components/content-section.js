@@ -1,5 +1,5 @@
-import './item-card'
 import './search-bar'
+import './list-item'
 
 class ContentSection extends HTMLElement {
   connectedCallback () {
@@ -17,11 +17,9 @@ class ContentSection extends HTMLElement {
 
           </div>
           <div class='mt-20'>
-            <div class='grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4'>
 
-              <item-card></item-card>
+            <list-item></list-item>
 
-            </div>
           </div>
         </div>
       </div>
