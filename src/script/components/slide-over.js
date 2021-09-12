@@ -8,7 +8,7 @@ class SlideOver extends HTMLElement {
 
   render () {
     this.innerHTML = /* html */`
-    <div class="fixed inset-0 overflow-hidden z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 overflow-hidden z-10 hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
         <div class="fixed inset-x-0 bottom-0 h-4/5 max-w-full flex">

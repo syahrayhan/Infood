@@ -52,6 +52,7 @@ module.exports = {
       '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       white: '0px 13px 56px 2px rgba(255, 255, 255, 0.3)',
+      orange: '0px 0px 18px 5px rgba(255, 138, 0, 0.4)',
       none: 'none',
     },
     fontFamily: {

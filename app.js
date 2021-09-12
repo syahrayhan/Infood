@@ -4,3 +4,5 @@ import './src/script/components/hero-section'
 import './src/script/components/content-section'
 import './src/script/components/slide-over'
 import './src/script/components/footer'
+
+import './src/script/components/detail-recipie'

@@ -17,7 +17,7 @@ class AppBar extends HTMLElement {
       <nav class='py-4 px-8 sm:px-16 z-100'>
         <div class='flex justify-between items-center'>
           <div>
-            <a href='#'>
+            <a href='../../'>
               <img src='${logo}' alt='logo infood' width='90px'>
             </a>
           </div>
