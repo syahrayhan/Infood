@@ -3,6 +3,7 @@ import '../components/slide-over'
 import '../components/list-item'
 import '../components/item-card'
 import '../components/detail-recipie'
+import '../components/search-bar'
 
 import DataSource from '../data/data-source'
 
@@ -11,7 +12,7 @@ const main = async () => {
   const closePanelButton = document.querySelector('#close-panel-button')
   const panelSavedItems = document.querySelector('#panel-saved-items')
   const listItem = document.querySelector('list-item')
-  // const showDetailRecipe = document.querySelector('detail-recipie')
+  const searchElement = document.querySelector('search-bar')
 
   showPanelButton.addEventListener('click', () => {
     let ctr = 0
@@ -43,8 +44,21 @@ const main = async () => {
     }
   })
 
+  const onButtonSearchClicked = async () => {
+    try {
+      const res = await DataSource.getSearchRecipe(searchElement.searchValue)
+      renderResult(res.results)
+    } catch (message) {
+      fallbackResult(message)
+    }
+  }
+
   const renderResult = result => {
     listItem.dataRecipe = result
+  }
+
+  const fallbackResult = message => {
+    listItem.renderError(message)
   }
 
   try {
@@ -55,14 +69,7 @@ const main = async () => {
     console.log(error)
   }
 
-  // listItem.eventDetail = async function () {
-  //   const key = this._dataRecipe.key
-  //   console.log(key)
-  //   const res = await DataSource.getDetailRecipe(key)
-  //   console.log(res.results)
-  //   console.log(showDetailRecipe)
-  //   renderDetail(res.results)
-  // }
+  searchElement.clickEvent = onButtonSearchClicked
 }
 
 const detail = async () => {

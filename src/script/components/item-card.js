@@ -8,10 +8,6 @@ class ItemCard extends HTMLElement {
     this.render()
   }
 
-  set eventDetail (event) {
-    this._eventDetail = event
-  }
-
   render () {
     const { title, thumb, times, key } = this._dataRecipe
     const baseUrl = '../../detail'
@@ -34,10 +30,6 @@ class ItemCard extends HTMLElement {
       </div>
     </div>
     `
-
-    const titleRecipe = this.querySelector('.title-recipe-card')
-
-    titleRecipe.addEventListener('click', () => this._eventDetail())
   }
 }
 

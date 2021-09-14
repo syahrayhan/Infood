@@ -3,6 +3,7 @@ import './slide-over'
 
 import plateIcon from '../../assets/plate.svg'
 import timeIcon from '../../assets/time.png'
+import notFound from '../../assets/item-not-found.png'
 
 class DetailRecipie extends HTMLElement {
   set detailRecipe (data) {
@@ -16,8 +17,9 @@ class DetailRecipie extends HTMLElement {
       <div class='w-full h-auto mb-16 bg-orange-soft p-8 xl:p-16'>
         <div class='flex flex-col items-center'>
           <div class='max-w-5xl w-full sm:w-8/12 hover:shadow-orange rounded-xl'>
-            <div class='overflow-hidden rounded-xl'>
-              <img src='${thumb}' alt='' width='100%' class='rounded-xl scale-125 hover:scale-110 transform ease-in-out duration-100 '>
+            <div class='overflow-hidden rounded-xl text-center'>
+              <img src='${thumb || notFound}' alt='' width=' ${thumb ? '100%' : '50%'}' class='mx-auto rounded-xl hover:scale-110 transform ease-in-out duration-100 '>
+              <h3 class='${thumb ? 'hidden' : ''}'>Mohon maaf saat ini gambar tidak tersedia</h3>
             </div>
             <div class='rounded-xl flex flex-col gap-y-3 bg-white px-4 py-8 mt-4'>
               <h2 class='text-black opacity-80 font-ubuntu font-semibold text-2xl'>${title}</h2>

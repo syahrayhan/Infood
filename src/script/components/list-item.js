@@ -7,14 +7,9 @@ class ListItem extends HTMLElement {
     this.render()
   }
 
-  set eventDetail (event) {
-    // console.log(event)
-    this._eventDetail = event
-  }
-
   set renderError (message) {
     this._message = message
-    this.innerHTML = /* html */`
+    this.parentElement.innerHTML = /* html */`
       <h2>${this._message}</h2>
     `
   }
