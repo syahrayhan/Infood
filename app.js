@@ -5,4 +5,12 @@ import './src/script/components/content-section'
 import './src/script/components/slide-over'
 import './src/script/components/footer'
 
-import './src/script/components/detail-recipie'
+import { main, detail } from './src/script/view/main'
+
+document.addEventListener('DOMContentLoaded', () => {
+  main()
+  const pathUrl = window.location.pathname
+  if (pathUrl === '/detail') {
+    detail()
+  }
+})

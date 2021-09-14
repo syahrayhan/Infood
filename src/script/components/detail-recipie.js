@@ -1,36 +1,42 @@
-import './ingredient-section'
-import './step-section'
+/* eslint-disable accessor-pairs */
+import './slide-over'
 
 import plateIcon from '../../assets/plate.svg'
 import timeIcon from '../../assets/time.png'
 
 class DetailRecipie extends HTMLElement {
-  connectedCallback () {
+  set detailRecipe (data) {
+    this._detailRecipe = data
     this.render()
   }
 
   render () {
+    const { title, thumb, times, servings, author, ingredient, step } = this._detailRecipe
     this.innerHTML = /* html */`
       <div class='w-full h-auto mb-16 bg-orange-soft p-8 xl:p-16'>
         <div class='flex flex-col items-center'>
           <div class='max-w-5xl w-full sm:w-8/12 hover:shadow-orange rounded-xl'>
             <div class='overflow-hidden rounded-xl'>
-              <img src='https://www.masakapahariini.com/wp-content/uploads/2018/08/nugget-tempe-MAHI-780x440.jpg' alt='' class='rounded-xl scale-125 hover:scale-110 transform ease-in-out duration-100 '>
+              <img src='${thumb}' alt='' width='100%' class='rounded-xl scale-125 hover:scale-110 transform ease-in-out duration-100 '>
             </div>
             <div class='rounded-xl flex flex-col gap-y-3 bg-white px-4 py-8 mt-4'>
-              <h2 class='text-black opacity-80 font-ubuntu font-semibold text-2xl'>Resep Nugget Tempe Mozzarella, Camilan Baru untuk Keluarga di Rumah</h2>
-              <p class='text-black opacity-80 font-poppins font-medium text-base'>Tim MAHI - Agustus 13, 2018</p>
-              <div class='inline-flex gap-x-8'>
-                <h5 class='bg-orange-secondary text-white font-poppins pl-2 pr-3 py-1 rounded-full inline-flex items-center'><span><img src='${plateIcon}' class='mr-1'></span>2 Porsi</h5>
-                <h5 class='bg-orange-secondary text-white font-poppins pl-2 pr-3 py-1 rounded-full inline-flex items-center'><span><img src='${timeIcon}' class='mr-1'></span>40mnt</h5>
+              <h2 class='text-black opacity-80 font-ubuntu font-semibold text-2xl'>${title}</h2>
+              <p class='text-black opacity-80 font-poppins font-medium text-base'>${author.user} - ${author.datePublished}</p>
+              <div class='inline-flex gap-x-4'>
+                <h5 class='bg-orange-secondary text-white font-poppins pl-2 pr-3 py-1 rounded-full inline-flex items-center'><span><img src='${plateIcon}' class='mr-1'></span>${servings}</h5>
+                <h5 class='bg-orange-secondary text-white font-poppins pl-2 pr-3 py-1 rounded-full inline-flex items-center'><span><img src='${timeIcon}' class='mr-1'></span>${times}</h5>
               </div>
               <h4 class='text-black opacity-80 font-poppins font-semibold text-lg mt-3'>bahan - bahan :</h4>
              
-              <ingredient-section></ingredient-section>
+              <ul class='detail-ingredient flex flex-col gap-y-3'>
+                
+              </ul>
 
               <h4 class='text-black opacity-80 font-poppins font-semibold text-lg mt-3'>Cara membuat :</h4>
              
-              <step-section></step-section>
+              <ul class='detail-step flex flex-col gap-y-3'>
+               
+              </ul>
 
             </div>
           </div>
@@ -38,7 +44,23 @@ class DetailRecipie extends HTMLElement {
         </div>
       </div>
     `
+
+    const detailIngredientParent = this.querySelector('.detail-ingredient')
+    const detailStep = this.querySelector('.detail-step')
+
+    ingredient.forEach(ingredient => {
+      const liDetailIngredient = document.createElement('li')
+      liDetailIngredient.className = 'detail-desc'
+      liDetailIngredient.innerHTML = ingredient
+      detailIngredientParent.appendChild(liDetailIngredient)
+    })
+
+    step.forEach(step => {
+      const liDetailStep = document.createElement('li')
+      liDetailStep.className = 'detail-desc'
+      liDetailStep.innerHTML = step
+      detailStep.appendChild(liDetailStep)
+    })
   }
 }
-
 customElements.define('detail-recipie', DetailRecipie)

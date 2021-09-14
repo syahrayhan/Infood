@@ -1,16 +1,32 @@
+/* eslint-disable accessor-pairs */
 import './item-card'
 
 class ListItem extends HTMLElement {
-  connectedCallback () {
+  set dataRecipe (data) {
+    this._dataRecipe = data
     this.render()
   }
 
-  render () {
+  set eventDetail (event) {
+    // console.log(event)
+    this._eventDetail = event
+  }
+
+  set renderError (message) {
+    this._message = message
     this.innerHTML = /* html */`
-    <div class='grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4'>
-      <item-card></item-card>
-    </div>
+      <h2>${this._message}</h2>
     `
+  }
+
+  render () {
+    this.innerHTML = /* html */''
+    this._dataRecipe.forEach(data => {
+      const recipeItem = document.createElement('item-card')
+      recipeItem.dataRecipe = data
+      recipeItem.eventDetail = this._eventDetail
+      this.appendChild(recipeItem)
+    })
   }
 }
 

@@ -24,10 +24,10 @@ class AppBar extends HTMLElement {
           <div>
             <ul>
               <li>
-                <a href='' class='flex flex-col text-orange-primary text-lg font-medium text-center'>
+                <button id='show-panel-button' class='flex flex-col text-orange-primary text-lg font-medium text-center'>
                 Tersimpan
-                <span class='bg-orange-primary rounded-full text-white'>0</span>
-                </a>
+                <span class='bg-orange-primary rounded-full text-white w-full hover:shadow-orange'>0</span>
+                </button>
               </li>
             </ul>
           </div>
