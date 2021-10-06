@@ -1,22 +1,21 @@
-// const axios = require('axios')
 
 class DataSource {
   static getRecipes () {
-    return fetch('https://masak-apa.tomorisakura.vercel.app/api/recipes')
+    return fetch('https://cors.bridged.cc/' + 'https://masak-apa.tomorisakura.vercel.app/api/recipes')
       .then(response => {
         return response.json()
       })
   }
 
   static getDetailRecipe (key) {
-    return fetch(`https://masak-apa.tomorisakura.vercel.app/api/recipe/${key}`)
+    return fetch('https://cors.bridged.cc/' + `https://masak-apa.tomorisakura.vercel.app/api/recipe/${key}`)
       .then(response => {
         return response.json()
       })
   }
 
   static getSearchRecipe (keyword) {
-    return fetch(`https://masak-apa.tomorisakura.vercel.app/api/search/?q=${keyword}`)
+    return fetch('https://cors.bridged.cc/' + `https://masak-apa.tomorisakura.vercel.app/api/search/?q=${keyword}`)
       .then(response => {
         return response.json()
       })

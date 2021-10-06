@@ -10,14 +10,13 @@ class ItemCard extends HTMLElement {
 
   render () {
     const { title, thumb, times, key } = this._dataRecipe
-    const baseUrl = '../../detail'
+    const baseUrl = './detail.html'
     this.innerHTML = /* html */`
-    <div class='max-w-sm hover:shadow-2xl rounded-xl'>
       <div class='relative'>
         <div class='overflow-hidden rounded-xl'>
           <img src='${thumb}' alt='' class='rounded-xl hover:scale-110 transform ease-in-out duration-100 '>
         </div>
-        <button class='absolute right-0 top-0 mt-2 mr-2 px-3 bg-yellow-400 bg-opacity-50 hover:bg-opacity-100 rounded-md text-white font-ubuntu'>Simpan</button>
+        <button class='hidden absolute right-0 top-0 mt-2 mr-2 px-3 bg-yellow-400 bg-opacity-50 hover:bg-opacity-100 rounded-md text-white font-ubuntu'>Simpan</button>
       </div>
       <div class='bg-white p-4 mt-2 rounded-xl '>
         <a class='title-recipe-card' href='${baseUrl}?key=${key}'>
@@ -28,7 +27,6 @@ class ItemCard extends HTMLElement {
             <div class='self-center'><img src='${starIcon}' class='w-20'></div>
           </div>
       </div>
-    </div>
     `
   }
 }

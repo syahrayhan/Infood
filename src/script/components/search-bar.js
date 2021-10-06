@@ -6,7 +6,6 @@ class SearchBar extends HTMLElement {
 
   set clickEvent (event) {
     this._clickEvent = event
-    this.render()
   }
 
   get searchValue () {
@@ -21,7 +20,7 @@ class SearchBar extends HTMLElement {
     </div>
     `
 
-    this.querySelector('#search-button').addEventListener('click', this._clickEvent)
+    this.querySelector('#search-button').addEventListener('click', () => { this._clickEvent() })
   }
 }
 

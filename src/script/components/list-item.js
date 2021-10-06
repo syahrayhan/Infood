@@ -7,13 +7,6 @@ class ListItem extends HTMLElement {
     this.render()
   }
 
-  set renderError (message) {
-    this._message = message
-    this.parentElement.innerHTML = /* html */`
-      <h2>${this._message}</h2>
-    `
-  }
-
   render () {
     this.innerHTML = /* html */''
     this._dataRecipe.forEach(data => {

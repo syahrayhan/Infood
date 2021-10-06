@@ -42,7 +42,7 @@ class DetailRecipie extends HTMLElement {
 
             </div>
           </div>
-          <button class='sticky bg-orange-primary opacity-70 font-ubuntu font-bold p-2 hover:opacity-100 hover:shadow-orange rounded-md text-white self-end bottom-5'>Simpan</button>
+          <button class='hidden sticky bg-orange-primary opacity-70 font-ubuntu font-bold p-2 hover:opacity-100 hover:shadow-orange rounded-md text-white self-end bottom-5'>Simpan</button>
         </div>
       </div>
     `

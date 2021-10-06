@@ -1,11 +1,13 @@
+import 'regenerator-runtime'
 import '../components/app-bar'
 import '../components/slide-over'
 import '../components/list-item'
-import '../components/item-card'
 import '../components/detail-recipie'
 import '../components/search-bar'
 
 import DataSource from '../data/data-source'
+
+// dijalankan ketika halaman utama dimuat
 
 const main = async () => {
   const showPanelButton = document.querySelector('#show-panel-button')
@@ -13,6 +15,14 @@ const main = async () => {
   const panelSavedItems = document.querySelector('#panel-saved-items')
   const listItem = document.querySelector('list-item')
   const searchElement = document.querySelector('search-bar')
+
+  const renderResult = result => {
+    listItem.dataRecipe = result
+  }
+
+  // const fallbackResult = message => {
+  //   listItem.renderError = message
+  // }
 
   showPanelButton.addEventListener('click', () => {
     let ctr = 0
@@ -46,31 +56,29 @@ const main = async () => {
 
   const onButtonSearchClicked = async () => {
     try {
-      const res = await DataSource.getSearchRecipe(searchElement.searchValue)
-      renderResult(res.results)
+      console.log(searchElement)
+      const req = await DataSource.getSearchRecipe(searchElement.searchValue)
+      const results = req.results
+      if (!results.length) {
+        alert('Maaf data yang kamu cari tidak ada, coba resep lain yuk')
+      }
+      renderResult(results)
     } catch (message) {
-      fallbackResult(message)
+      alert(message)
     }
-  }
-
-  const renderResult = result => {
-    listItem.dataRecipe = result
-  }
-
-  const fallbackResult = message => {
-    listItem.renderError(message)
   }
 
   try {
     const res = await DataSource.getRecipes()
-    const result = res.results
-    renderResult(result)
+    renderResult(res.results)
   } catch (error) {
     console.log(error)
   }
 
   searchElement.clickEvent = onButtonSearchClicked
 }
+
+// dijalankan ketika page detail dimuat
 
 const detail = async () => {
   const showDetailRecipe = document.querySelector('detail-recipie')
@@ -83,7 +91,6 @@ const detail = async () => {
     const urlParams = new URLSearchParams(window.location.search)
     const keyParam = urlParams.get('key')
     const res = await DataSource.getDetailRecipe(keyParam)
-    console.log(res.results)
     renderDetail(res.results)
   } catch (error) {
     console.log(error)
